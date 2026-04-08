@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "75bbef9d-05ac-46b0-ba0a-c2220f8b447f",
+		"name": "TitanbayAPIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34343715"
+	},
+	"item": [
+		{
+			"name": "getFundsByID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/funds/{{fund_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"funds",
+						"{{fund_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFunds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/funds",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"funds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addFunds",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testing another fund\",\n    \"vintage_year\": 2004,\n    \"target_size_usd\": 250040000,\n    \"status\": \"Fundraising\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/funds",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"funds"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateFunds",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Titanbay Growth Fund I\",\n    \"vintage_year\": 2022,\n    \"target_size_usd\": 250000000.00,\n    \"status\": \"Fundraising\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/funds/{{fund_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"funds",
+						"{{fund_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllInvestors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/investors",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"investors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addNewInvestor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"MY Clothes\",\n    \"investor_type\": \"Family Office\",\n    \"email\": \"privateequity@AMYLOTHES.ca.gov\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/investors",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"investors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addInvestmenttoFunds",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"investor_id\": \"{{investor_id}}\",\n  \"amount_usd\": 75000000.00,\n  \"investment_date\": \"2024-09-22\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/funds/{{fund_id}}/investments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"funds",
+						"{{fund_id}}",
+						"investments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getInvestmentFunds",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/funds/{{fund_id}}/investments",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"funds",
+						"{{fund_id}}",
+						"investments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
